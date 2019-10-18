@@ -1,4 +1,6 @@
 project(DesigenPattern)
 cmake_minimum_required(VERSION 3.2)
-set(CMAKE_CXX_FLAGS "-std=c++11")
-add_executable(singleton SingletonTest.cpp)
+# set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_FLAGS "-std=c++14")
+add_executable(singleton SingletonTest.cpp) 
+add_executable(abs_factory FactoryTest.cpp) 
