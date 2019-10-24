@@ -24,7 +24,7 @@ public:
   }
 
 protected:
-  Singleton() {}
+  Singleton() { std::cout << "Base Singleton" << std::endl; }
   static Ptr LookUp(const std::string &name) {
     auto iter = registry_.find(name);
     if (iter == registry_.end()) {
@@ -64,7 +64,10 @@ Singleton::Registry Singleton::registry_ = Registry();
 // Let the code dynamically produce config corresponding to the `getenv()`
 class MySingleton : public Singleton {
 public:
-  MySingleton() { Singleton::Register("Safer Car", Singleton::Ptr(this)); }
+  MySingleton() : Singleton() {
+    std::cout << "My dream" << std::endl;
+    Singleton::Register("Safer Car", Singleton::Ptr(this));
+  }
 };
 } // namespace peking
 #endif
