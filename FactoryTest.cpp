@@ -1,9 +1,7 @@
-#include "AbstractFactory.hpp"
+#include "Factory.hpp"
 #include <iostream>
 int main() {
-  peking::Application app;
-  peking::FactoryA fa;
-  auto app_res = app.Create(fa);
-  std::cout << app_res->Name() << std::endl;
+  peking::Creator factory;
+  factory.Create(peking::ProductID::Cellphone);
   return 0;
 }
