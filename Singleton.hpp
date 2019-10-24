@@ -60,6 +60,8 @@ public:
 };
 Singleton::Ptr Singleton::ptr_ = nullptr;
 Singleton::Registry Singleton::registry_ = Registry();
+// Intention: make some special son-class representing different config, 
+// Let the code dynamically produce config corresponding to the `getenv()`
 class MySingleton : public Singleton {
 public:
   MySingleton() { Singleton::Register("Safer Car", Singleton::Ptr(this)); }
