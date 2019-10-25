@@ -28,7 +28,7 @@ public:
 };
 class Application {
 public:
-  AbstractProduct::ProductPtr Create(AbstractFactory& factory) {
+  AbstractProduct::ProductPtr Create(AbstractFactory &factory) {
     return factory.Make();
   }
 };
