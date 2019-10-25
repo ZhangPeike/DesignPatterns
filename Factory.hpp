@@ -20,6 +20,8 @@ public:
 class Creator {
 public:
   virtual Product *Create(ProductID id);
+
+protected:
 };
 Product *Creator::Create(ProductID id) {
   switch (id) {
@@ -37,5 +39,11 @@ Product *Creator::Create(ProductID id) {
     break;
   }
 }
+template <typename OneProduct> class StandardCreator : public Creator {
+public:
+  Product *Create() {
+    return new OneProduct("one");
+  }
+};
 } // namespace peking
 #endif
